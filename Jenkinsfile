@@ -12,21 +12,21 @@ node {
 
        stage('Compiling'){
 
-          sh 'mvn clean install'
+          bat 'mvn clean install'
        }
 	   
       stage('Sonar') {
                     //add stage sonar
-                    sh 'mvn sonar:sonar'
+                    bat 'mvn sonar:sonar'
                 }
 	    
 	stage('Checkstyle') {
-                    sh 'mvn checkstyle:checkstyle'
+                    bat 'mvn checkstyle:checkstyle'
                 }
 
-               stage('PMD') {
-                    sh 'mvn pmd:check'
-                }
+               /*stage('PMD') {
+                    bat 'mvn pmd:check'
+                } */
       /* stage('mail'){
 
          mail body: 'project build successful',
